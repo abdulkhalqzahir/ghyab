@@ -13,35 +13,44 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            text-shadow: 0px 0px 10px 0px red;
-           
+            text-shadow: 0px 0px 10px 0px red;    
             margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #8e1115, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb); /* رەنگاو رەنگی هێڵی */
-        background-size: 400% 400%; /* گەورەکردنی باکگراوندەکە */
         animation: gradientBG 15s ease infinite; /* ئەنیمەیشن */
         text-align: right;
-            
-            
-
+        
         }
+html,body{
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+input{
+    color: aliceblue;
+}
+      .login-container {
+            background-color: rgba(0,0,0,0.5) !important;
 
-        .login-container {
-            background-color: #fff;
             padding: 20px 40px;
             border-radius: 8px;
             box-shadow: 0px 0px 20px 0px red;
-            
+           
             width: 300px;
             text-align: center;
         }
 
         .login-container h2 {
             margin-bottom: 20px;
-            color: #333;
+            color: #bcbbac;
         }
 
+        :hover.login-container input[type="text"],
+        :hover.login-container input[type="password"] {
+            box-shadow: 0px 0px 40px 0px yellow;
+        transition: 0.9s;}
         .login-container input[type="text"],
         .login-container input[type="password"] {
             width: 100%;
@@ -51,22 +60,28 @@
             border-radius: 4px;
             font-size: 16px;
             text-align: right;
-            box-shadow: 0px 0px 40px 0px rgb(202, 5, 5);
+           
+            background-color: rgba(0,0,0,0.5) !important;
         }
 
         .login-container input[type="submit"] {
-            width: 100%;
+            width: 321px;
             padding: 10px;
-            background-color: #28a745;
+            background-color: rgba(0,0,0,0.5) !important;
             border: none;
             border-radius: 4px;
             color: #fff;
             font-size: 16px;
             cursor: pointer;
+            
         }
-
+        :hover.login-container input[type="submit"]{
+box-shadow: 0px 0px 20px 0px red;
+transition: 0.5s;
+        }
         .login-container input[type="submit"]:hover {
             background-color: #218838;
+            
         }
 
         .login-container .error-message {
@@ -76,6 +91,24 @@
         img{
           border-radius: 400px;
         }
+        .password-container {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.toggle-password:hover {
+    color: #007bff;
+}
     </style>
 </head>
 <body>
@@ -85,9 +118,14 @@
         <h2>کۆلێژی کارگێری و ئابووری</h2>
         <form id="loginForm">
             <input type="text" id="username" placeholder="ناوی بەکارهێنەر" required>
-            <input type="password" id="password" placeholder="پاسوۆرد" required>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="پاسوۆرد" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()"></span>
+            </div>
+            <br>
             <input type="submit" value="چوونەژوورەوە">
         </form>
+        
         <p class="error-message" id="errorMessage"></p>
     </div>
 
@@ -97,14 +135,25 @@
 
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
+            function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.querySelector('.toggle-password');
 
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.textContent = ''; // یان هێمایەکی تر بۆ نیشاندانی پاسوۆرد
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.textContent = '';
+    }
+}
             // نموونەی یوزەر و پاسوۆرد
-            var correctUsername = "abdulkhalq";
-            var correctPassword = "kuy";
+            var correctUsername = "idara.com";
+            var correctPassword = "idara1";
 
             if (username === correctUsername && password === correctPassword) {
                 // ئەگەر یوزەر و پاسوۆرد ڕاست بوو، بچۆ بۆ وێبسایتەکە
-                window.location.href = "ss.html";
+                window.location.href = "sss.html";
             } else {
                 // ئەگەر یوزەر یان پاسوۆرد هەڵە بوو، هەڵە نیشان بدە
                 document.getElementById('errorMessage').textContent = "ناوی بەکارهێنەر یان پاسوۆرد هەڵەیە!";
