@@ -1,17 +1,92 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #c56d09c0, #2938dc, #ef37bb, #d2d44b, red);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background-color: #889af3;
+    background-image: linear-gradient(43deg, #aab2dc 0%, #bd8dba 46%, #ffa600 100%);
+    padding: 20px;
+    direction: rtl;
     text-align: right;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 8px ridge rgb(231, 54, 54);
+    border-radius: 20px;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.container {
+    border: 8px ridge rgb(197, 50, 205);
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Noto Naskh Arabic', 'Noto Sans Kurdish', 'Scheherazade', serif;
+
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #fc00ff 0%, #00dbde 51%, #fc00ff 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    right: 200px;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
 }
 
 .delete-icon {
@@ -21,40 +96,15 @@ body {
     font-size: 18px;
     transition: color 0.3s ease;
 }
-svg{
-    width: 30px;
-    height: 40px;
-}
+
 .delete-icon:hover {
     color: #a71d2a;
 }
 
-.container {
-    width: 80%;
-    margin: 20px auto;
-    background: linear-gradient(135deg, rgb(229, 255, 0), #dcb482, #5ebc4d);
-    padding: 20px;
+#lessonDisplay {
     border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px red;
-   
-
-}
-
-h1, h2 {
-    color: #343a40;
-}
-
-.table img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.absent-5 {
-    background-color: #ffc107 !important;
-}
-
-.absent-8 {
-    background-color: #dc3545 !important;
-    color: white !important;
+    padding: 15px;
+    background-color: #e9f7ff;
+    border: 1px solid #b3e5fc;
+    color: #31708f;
 }
